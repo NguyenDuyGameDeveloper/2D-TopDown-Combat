@@ -1,9 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
-    public static PlayerController instance;
     public bool FacingLeft { get { return facingLeft; } }
     #region Info
     private PlayerControls playerControls;
@@ -22,9 +21,10 @@ public class PlayerController : MonoBehaviour
     private bool isDashing = false;
     #endregion
 
-    private void Awake()
+    protected override void Awake()
     {
-        instance = this;
+        base.Awake();
+
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Dash()
     {
-        if(!isDashing)
+        if (!isDashing)
         {
             isDashing = true;
             playerMoveSpeed *= dashSpeed;
