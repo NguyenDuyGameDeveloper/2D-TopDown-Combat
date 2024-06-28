@@ -10,6 +10,9 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private float playerMoveSpeed;
     [SerializeField] private float dashSpeed;
     [SerializeField] private TrailRenderer trailRenderer;
+    [SerializeField] private Transform weaponCollider;
+    [SerializeField] private Transform slashAnimSpawnPoint;
+
     private float startingMoveSpeed;
     private Vector2 playerMovement;
 
@@ -48,6 +51,8 @@ public class PlayerController : Singleton<PlayerController>
     {
         playerControls.Enable();
     }
+    public Transform GetWeaponCollider() => weaponCollider;
+    public Transform GetSlashAnimSpawnPoint() => slashAnimSpawnPoint;
     private void PlayerInput()
     {
         playerMovement = playerControls.Movement.Move.ReadValue<Vector2>();
