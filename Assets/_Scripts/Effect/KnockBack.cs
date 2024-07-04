@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class KnockBack : MonoBehaviour
@@ -13,11 +12,11 @@ public class KnockBack : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    public void GetKnockBack(Transform _damageSource,float _knockBackThrust)
+    public void GetKnockBack(Transform _damageSource, float _knockBackThrust)
     {
         GettingKnockBack = true;
         Vector2 different = (transform.position - _damageSource.position).normalized * _knockBackThrust * rb.mass;
-        rb.AddForce(different,ForceMode2D.Impulse);
+        rb.AddForce(different, ForceMode2D.Impulse);
         StartCoroutine(KnockBackCoroutine());
     }
     private IEnumerator KnockBackCoroutine()

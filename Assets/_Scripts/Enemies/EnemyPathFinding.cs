@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyPathFinding : MonoBehaviour
@@ -25,11 +23,12 @@ public class EnemyPathFinding : MonoBehaviour
             return;
 
         rb.MovePosition(rb.position + enemyMoveDir * (enemyMoveSpeed * Time.fixedDeltaTime));
-        
-        if(enemyMoveDir.x < 0)
+
+        if (enemyMoveDir.x < 0)
             sr.flipX = true;
-        else
+        else if (enemyMoveDir.x > 0)
             sr.flipX = false;
     }
     public void MoveTo(Vector2 _targetPosition) => enemyMoveDir = _targetPosition;
+    public void StopMoving() => enemyMoveDir = Vector3.zero;
 }
