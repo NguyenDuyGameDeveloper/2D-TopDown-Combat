@@ -20,6 +20,7 @@ public class AreaExit : MonoBehaviour
     }
     private IEnumerator LoadSceneCoroutine()
     {
+        Debug.Log("LoadScene called");
         UI_FadeScreen.Instance.FadeToBlack();
         yield return new WaitForSeconds(waitToLoadTime);
         SceneManager.LoadScene(sceneToLoad);

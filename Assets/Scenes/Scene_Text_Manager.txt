@@ -1,0 +1,33 @@
+﻿
+
+Scene_Town:
+   AreaExit: Scene Town to Scene 1_East Middle
+	Scene To Load: Scene_1
+	Scene Transition Name: Scene 1_West Middle_Entrance
+
+   AreaEntrance: Scene_Town_East Middle
+	Transition Name: Scene_Town_East Middle
+-------------------------------------------------------------
+Scene_1:
+   AreaExit: Scene 1 to Scene 2_South Right
+	Scene To Load: Scene_2
+	Scene Transition Name: Scene_2_North Left
+
+   AreaEntrance: Scene_1_South Right_Entrance
+	Transition Name: Scene_1_South Right_Entrance
+	---------------------------------------
+   AreaExit: Scene 1 to Scene_Town_East Bottom
+	Scene To Load: Scene_Town
+	Scene Transition Name: Scene_Town_East Bottom
+
+   AreEntrance: Scene 1_West Middle_Entrance
+	Transition Name: Scene 1_West Middle_Entrance
+-------------------------------------------------------------
+Scene 2:
+   AreaExit:
+	Scene To Load: Scene_1
+	Scene Transition Name: Scene_1_South_Entrance
+   AreaEntrance:
+	Transition Name: Scene_2_North_Entrance
+----------
+South: Nam, North: Bắc, East: Đông, West: Tây

@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 8350727145869335833}
   - component: {fileID: 8350727145869335832}
   - component: {fileID: 8350727145869335830}
+  - component: {fileID: 3151702020477892722}
   - component: {fileID: 8350727145869335831}
   - component: {fileID: 8350727145869335828}
   - component: {fileID: 8350727145869335838}
@@ -333,9 +334,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6c7e158da1fa64a82d7cababb0eaad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 5
   knockBackThrustAmount: 10
   damageRecoveryTime: 1
+--- !u!114 &3151702020477892722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8350727145869335836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 212e1ac197757f14fbbea9d5b52fc67c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullStaminaImage: {fileID: 21300000, guid: f9b1652859242734e9a2b8f89f4835fc, type: 3}
+  emptyStaminaImage: {fileID: 21300000, guid: 771b990feeacc4a40b0cb4b5e5351197, type: 3}
+  timeBetweenStaminaRestore: 5
 --- !u!114 &8350727145869335831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,7 +499,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
 --- !u!1 &8350727146234675941
 GameObject:
   m_ObjectHideFlags: 0

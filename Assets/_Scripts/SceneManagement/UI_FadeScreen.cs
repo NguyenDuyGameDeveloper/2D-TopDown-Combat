@@ -11,6 +11,7 @@ public class UI_FadeScreen : Singleton<UI_FadeScreen>
 
     public void FadeToBlack()
     {
+        Debug.Log("Fade To Black called");
         if (fadeScreenCoroutine != null)
             StopCoroutine(fadeScreenCoroutine);
 
@@ -19,6 +20,7 @@ public class UI_FadeScreen : Singleton<UI_FadeScreen>
     }
     public void FadeToClear()
     {
+        Debug.Log("Fade To Clear called");
         if (fadeScreenCoroutine != null)
             StopCoroutine(fadeScreenCoroutine);
 

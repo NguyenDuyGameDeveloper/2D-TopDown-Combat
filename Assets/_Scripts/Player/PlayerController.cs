@@ -39,6 +39,8 @@ public class PlayerController : Singleton<PlayerController>
     {
         playerControls.Combat.Dash.performed += _ => Dash();
         startingMoveSpeed = playerMoveSpeed;
+
+        ActiveInventory.Instance.EquipStartingWeapon();
     }
     private void Update()
     {
@@ -49,10 +51,8 @@ public class PlayerController : Singleton<PlayerController>
         Move();
         AdjustPlayerFacingDirection();
     }
-    private void OnEnable()
-    {
-        playerControls.Enable();
-    }
+    private void OnEnable() => playerControls.Enable();
+    private void OnDisable() => playerControls.Disable();
     public Transform GetWeaponCollider() => weaponCollider;
     public Transform GetSlashAnimSpawnPoint() => slashAnimSpawnPoint;
     private void PlayerInput()
@@ -64,7 +64,7 @@ public class PlayerController : Singleton<PlayerController>
     }
     private void Move()
     {
-        if (knockBack.GettingKnockBack) return;
+        if (knockBack.GettingKnockBack || PlayerHealth.Instance.IsDead) return;
 
         rb.MovePosition(rb.position + playerMovement * (playerMoveSpeed * Time.fixedDeltaTime));
     }
@@ -86,8 +86,9 @@ public class PlayerController : Singleton<PlayerController>
     }
     private void Dash()
     {
-        if (!isDashing)
+        if (!isDashing && Stamina.Instance.CurrentStamina > 0)
         {
+            Stamina.Instance.UseStamina();
             isDashing = true;
             playerMoveSpeed *= dashSpeed;
             trailRenderer.emitting = true;
