@@ -18,7 +18,7 @@ public class PlayerHealth : Singleton<PlayerHealth>
     private Flash flash;
 
     const string HEALTH_SLIDER_TEXT = "Health_Slider";
-    const string TOWN_TEXT = "Scene_Town";
+    const string TOWN_TEXT = "SceneTown";
 
     readonly int DEATH_HASH = Animator.StringToHash("Death");
 

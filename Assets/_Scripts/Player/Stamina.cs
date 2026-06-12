@@ -29,7 +29,8 @@ public class Stamina : Singleton<Stamina>
     public void ReplenishStaminaOnDeath()
     {
         CurrentStamina = startingStamina;
-        UpdateStaminaImages();  
+        UpdateStaminaImages();
+        CameraController.Instance.SetPlayerCameraFollow();
     }
     public void UseStamina()
     {

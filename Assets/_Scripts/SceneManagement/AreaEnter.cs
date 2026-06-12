@@ -1,17 +1,22 @@
+using System.Collections;
 using UnityEngine;
 
-public class AreaEntrance : MonoBehaviour
+public class AreaEnter : MonoBehaviour
 {
-    [SerializeField] private string transitionName;
+    [SerializeField] private string enterFrom;
 
-    private void Start()
+    private IEnumerator Start()
     {
-        if (transitionName == SceneManagement.Instance.SceneTransitionName)
+        yield return null;
+
+        if (enterFrom == SceneManagement.Instance.SceneTransitionName)
         {
+
             PlayerController.Instance.transform.position = this.transform.position;
             CameraController.Instance.SetPlayerCameraFollow();
 
             UI_FadeScreen.Instance.FadeToClear();
+
         }
     }
 }
