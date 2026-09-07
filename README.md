@@ -39,4 +39,8 @@ This project was created to practice gameplay programming, Unity systems, scene 
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/acfe5341-2bc2-4985-a227-e790f5cb6151" />
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8b2fd82f-bf71-4a6b-9ad-04f9c9f73725" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/790872e9-90ae-4dda-8959-fe612a33030f" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2896dd84-208e-4abe-9958-0653388574de" />
+
+
